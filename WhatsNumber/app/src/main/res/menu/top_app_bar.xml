@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/top_app_bar_text_size"
+        android:icon="@drawable/ic_round_text_fields_24"
+        app:showAsAction="ifRoom"
+        android:title="@string/top_app_bar_text_size" />
+
+    <item
+        android:id="@+id/top_app_bar_change_color"
+        android:icon="@drawable/ic_baseline_color_lens_24"
+        app:showAsAction="always"
+        android:title="@string/top_app_bar_change_color" />
+</menu>

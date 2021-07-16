@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Qual é o número?</string>
+    <string name="send_label">Enviar</string>
+    <string name="confirm_label">Confirmar</string>
+    <string name="back_label">Voltar</string>
+
+    <string name="main_activity_title_label">Qual é o número?</string>
+
+    <string name="number_fragment_new_match">Nova Partida</string>
+    <string name="number_fragment_type_number">Digite o palpite</string>
+
+    <string name="number_fragment_input_empty_error">O campo não pode ser vazio</string>
+
+    <string name="top_app_bar_text_size">Alterar tamanho do LED</string>
+    <string name="top_app_bar_change_color">Mudar cor do LED</string>
+
+    <string name="number_status_unknown">Status Desconhecido</string>
+    <string name="number_status_error">Erro</string>
+    <string name="number_status_greater_than">É maior</string>
+    <string name="number_status_less_than">É menor</string>
+    <string name="number_status_win">Acertou!</string>
+    <string name="number_status_waiting">Aguardando o palpite…</string>
+    <string name="select_color">Selecione uma cor</string>
+
+    <string name="number_attempts_plural_message">Você acertou com %s palpites</string>
+    <string name="number_attempts_singular_message">Você acertou com 1 palpite</string>
+
+
+    <string name="feature_not_developed">Funcionalidade não implementada</string>
+</resources>

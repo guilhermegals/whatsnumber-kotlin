@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary">#e3405e</color>
+    <color name="color_primary_variant">#a61c35</color>
+    <color name="color_primary_dark">#bf213d</color>
+    <color name="color_secondary">#5294bf</color>
+    <color name="color_secondary_light">#6d9ebf</color>
+    <color name="color_secondary_variant">#2889c9</color>
+
+    <color name="color_background">#FAF7FC</color>
+    <color name="color_background_darker">#F7ECFE</color>
+    <color name="color_surface">#FCFCFC</color>
+    <color name="color_surface_darker">#FCFCFC</color>
+    <color name="color_error">#EE2D55</color>
+    <color name="color_success">#097136</color>
+    <color name="color_disable">#4820142B</color>
+
+    <!--"On" colors define how text, icons and strokes are colored in relation to the surface-->
+    <!--on which they appear.-->
+    <color name="color_on_primary">#fafafa</color>
+    <color name="color_on_secondary">#ffffff</color>
+    <color name="color_on_background">#000000</color>
+    <color name="color_on_surface">#242222</color>
+    <color name="color_on_error">#ffffff</color>
+    <color name="color_outline">#2020142B</color>
+    <color name="color_on_disable">#EEF1F3</color>
+
+    <!--Text colors-->
+    <color name="primary_text_color">#000000</color>
+    <color name="primary_text_color_medium_emphasis">#545454</color>
+    <color name="primary_text_color_inactive">#666666</color>
+    <color name="primary_text_color_disable">#9e9e9e</color>
+
+</resources>

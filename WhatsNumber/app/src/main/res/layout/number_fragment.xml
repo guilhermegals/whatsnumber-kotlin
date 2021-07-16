@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.guilhermegals.whatsnumber.feature.NumberViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/favorites_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/number_fragment_container_padding">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/number_fragment_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/number_fragment_status_margin_bottom"
+            android:setTextByNumberStatus="@{viewModel.currentStatus}"
+            android:textAppearance="@style/TextAppearance.MyApp.Headline6"
+            app:layout_constraintBottom_toTopOf="@id/number_fragment_led_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Acertou!" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/number_fragment_led_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.ledNumber}"
+            android:textAppearance="@style/TextAppearance.MyApp.Headline2"
+            app:layout_constraintBottom_toTopOf="@id/number_fragment_input_attempt_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="123" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/number_fragment_new_match"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/number_fragment_new_match_margin_top"
+            android:goneUnless="@{viewModel.canNewMatch}"
+            android:minHeight="@dimen/number_fragment_new_match_min_height"
+            android:onClick="@{() -> viewModel.newMatch()}"
+            android:text="@string/number_fragment_new_match"
+            android:textAppearance="@style/TextAppearance.MyApp.Button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/number_fragment_led_number"
+            tools:visibility="visible" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/number_fragment_attempts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/number_fragment_attempts_margin_top"
+            android:setAttemptsText="@{viewModel.showAttempts}"
+            android:textAppearance="@style/TextAppearance.MyApp.Subtitle1"
+            app:layout_constraintTop_toBottomOf="@id/number_fragment_new_match"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Você fez 6 palpites" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/number_fragment_input_attempt_number"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            error="@{viewModel.textInputError}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/number_fragment_type_number"
+            app:counterEnabled="true"
+            app:counterMaxLength="3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/number_fragment_send"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/number_fragment_edit_attempt_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="3"
+                android:text="@={viewModel.textInputNumber}"
+                android:textAppearance="@style/TextAppearance.MyApp.Subtitle1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/number_fragment_send"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/number_fragment_send_margin_start"
+            android:onClick="@{() -> viewModel.checkAttempt()}"
+            android:setEnabledByNumberStatus="@{viewModel.currentStatus}"
+            android:text="@string/send_label"
+            android:textAppearance="@style/TextAppearance.MyApp.Button"
+            app:layout_constraintBottom_toBottomOf="@id/number_fragment_input_attempt_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/number_fragment_input_attempt_number"
+            app:layout_constraintTop_toTopOf="@id/number_fragment_input_attempt_number" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
